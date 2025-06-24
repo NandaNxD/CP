@@ -6,7 +6,22 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 
-public class Main{
+class Main{
+
+    static class Pair implements Comparable<Pair> {
+        int first, second;
+
+        public Pair(int first, int second) {
+            this.first = first;
+            this.second = second;
+        }
+
+        @Override
+        public int compareTo(Pair o) {
+            return Integer.compare(this.first, o.first); // Ascending order by first
+        }
+    }
+
     static class FastScanner {
         // I don't understand how this works lmao
         private int BS = 1 << 16;
@@ -147,11 +162,13 @@ public class Main{
     public static void main(String args[]){
         FastScanner fs=new FastScanner("input.txt");
         PrintWriter out= getFastOutputWriter("output.txt");
-        
-        Long t=fs.nextLong();
+
+        long t=fs.nextLong();
 
         while(t-->0){
-            
+            int n=fs.nextInt();
+
+
         }
 
         out.flush();
